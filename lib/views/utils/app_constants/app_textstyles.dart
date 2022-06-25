@@ -24,3 +24,27 @@ final introductionSubtitleTextStyle = GoogleFonts.poppins(
   fontSize: 15.sp,
   fontWeight: FontWeight.normal,
 );
+
+final authenticationTitleTextStyle = GoogleFonts.poppins(
+  color: AppColors.authenticationTitleTextColor,
+  fontSize: 30.sp,
+  fontWeight: FontWeight.w500,
+);
+
+final authenticationHintTextStyle = GoogleFonts.poppins(
+  color: AppColors.authenticationHintTextColor,
+  fontSize: 15.sp,
+  fontWeight: FontWeight.normal,
+);
+
+final textFieldStyle = GoogleFonts.poppins(
+  color: AppColors.introductionTitleTextColor,
+  fontSize: 20.sp,
+);
+
+final textFieldHintTextStyle = GoogleFonts.poppins(
+  fontSize: 15.sp,
+  fontWeight: FontWeight.normal,
+  color: AppColors.authenticationHintTextColor,
+);
+

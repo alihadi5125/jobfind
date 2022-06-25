@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobfind/controllers/cubits/authentication_cubits/login_secure_password_cubit.dart';
+import 'package:jobfind/controllers/cubits/authentication_cubits/signup_secure_password_cubit.dart';
+import 'package:jobfind/controllers/cubits/authentication_cubits/signup_secure_password_enter_cubit.dart';
 import 'package:jobfind/controllers/cubits/introduction_cubits/introduction_page_view_cubit.dart';
 import 'package:jobfind/views/introduction_views/splash_screen.dart';
 
@@ -25,6 +28,16 @@ class MyApp extends StatelessWidget {
         BlocProvider<IntroductionPageViewCubit>(
           create: (BuildContext context) => IntroductionPageViewCubit(0),
         ),
+        BlocProvider<SignupSecurePasswordCubit>(
+          create: (BuildContext context) => SignupSecurePasswordCubit(false),
+        ),
+        BlocProvider<SignupSecurePasswordEnterCubit>(
+          create: (BuildContext context) => SignupSecurePasswordEnterCubit(false),
+        ),
+        BlocProvider<LoginSecurePasswordCubit>(
+          create: (BuildContext context) => LoginSecurePasswordCubit(false),
+        ),
+
       ],
       child: ScreenUtilInit(
         designSize: const Size(375, 812),

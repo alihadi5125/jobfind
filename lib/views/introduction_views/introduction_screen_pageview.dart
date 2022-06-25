@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobfind/controllers/cubits/introduction_cubits/introduction_page_view_cubit.dart';
+import 'package:jobfind/views/authentication_views/login_views/login_views.dart';
 import 'package:jobfind/views/authentication_views/signup_views/signup_screen.dart';
 import 'package:jobfind/views/introduction_views/first_introduction_screen.dart';
 import 'package:jobfind/views/introduction_views/second_introduction_screen.dart';
 import 'package:jobfind/views/introduction_views/third_introduction_screen.dart';
 import 'package:jobfind/views/utils/app_constants/app_colors.dart';
 import 'package:jobfind/views/utils/app_constants/app_constants.dart';
-import 'package:jobfind/views/utils/app_properties.dart';
+import 'package:jobfind/views/utils/app_constants/app_properties.dart';
 import 'package:jobfind/views/utils/custom_widgets/app_buttons.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -58,7 +59,7 @@ class IntroductionScreenPageView extends StatelessWidget {
                             Navigator.push(
                               context,
                               AppContents.scalePageTransition(
-                                page: const SignupScreen(),
+                                page: const LoginScreen(),
                               ),
                             );
                           },

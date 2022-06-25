@@ -1,13 +1,9 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:jobfind/views/utils/app_constants/app_colors.dart';
 import 'package:jobfind/views/utils/app_constants/app_textstyles.dart';
 
-class AppButtons{
-
+class AppButtons {
   //Custom Filled Button
   static Widget customFilledButton({
     required String? onTopText,

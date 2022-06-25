@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:jobfind/controllers/cubits/authentication_cubits/login_secure_password_cubit.dart';
 import 'package:jobfind/controllers/cubits/authentication_cubits/signup_secure_password_cubit.dart';
-import 'package:jobfind/controllers/cubits/authentication_cubits/signup_secure_password_enter_cubit.dart';
-import 'package:jobfind/views/authentication_views/login_views/login_views.dart';
+import 'package:jobfind/views/authentication_views/signup_views/signup_screen.dart';
+import 'package:jobfind/views/dashboard_views/dashboard_pageview_screen.dart';
 import 'package:jobfind/views/utils/app_constants/app_colors.dart';
 import 'package:jobfind/views/utils/app_constants/app_properties.dart';
 import 'package:jobfind/views/utils/app_constants/app_strings.dart';
@@ -14,8 +15,8 @@ import 'package:jobfind/views/utils/app_constants/custom_slide_page_transition.d
 import 'package:jobfind/views/utils/custom_widgets/app_buttons.dart';
 import 'package:jobfind/views/utils/custom_widgets/custom_textfield.dart';
 
-class SignupScreen extends StatelessWidget {
-  const SignupScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +43,7 @@ class SignupScreen extends StatelessWidget {
               color: AppColors.white,
               alignment: Alignment.centerLeft,
               child: Text(
-                AppStrings.signupScreenFirstText,
+                AppStrings.loginScreenFirstText,
                 style: authenticationTitleTextStyle,
               ),
             ),
@@ -53,34 +54,12 @@ class SignupScreen extends StatelessWidget {
               builder: (context, state) {
                 return CustomTextField(
                   textInputAction: TextInputAction.next,
-                  textInputType: TextInputType.name,
-                  maxLines: 1,
-                  prefixIcon: Icons.account_box_outlined,
-                  suffixIcon: Icons.remove_red_eye,
-                  includeSuffixIcon: false,
-                  controller: AppProperties.signupUserNameController,
-                  secureText: false,
-                  state: state,
-                  hintText: AppStrings.signupScreenSecondText,
-                  onPressed: () => context
-                      .read<SignupSecurePasswordCubit>()
-                      .setSuffixText(secureText: state ? false : true),
-                );
-              },
-            ),
-            SizedBox(
-              height: 15.sp,
-            ),
-            BlocBuilder<SignupSecurePasswordCubit, bool>(
-              builder: (context, state) {
-                return CustomTextField(
-                  textInputAction: TextInputAction.next,
                   textInputType: TextInputType.emailAddress,
                   maxLines: 1,
                   prefixIcon: Icons.email_outlined,
                   suffixIcon: Icons.remove_red_eye,
                   includeSuffixIcon: false,
-                  controller: AppProperties.signupUserEmailController,
+                  controller: AppProperties.loginUserEmailController,
                   secureText: false,
                   state: state,
                   hintText: AppStrings.signupScreenFourthText,
@@ -93,7 +72,7 @@ class SignupScreen extends StatelessWidget {
             SizedBox(
               height: 15.sp,
             ),
-            BlocBuilder<SignupSecurePasswordCubit, bool>(
+            BlocBuilder<LoginSecurePasswordCubit, bool>(
               builder: (context, state) {
                 return CustomTextField(
                   textInputAction: TextInputAction.next,
@@ -102,56 +81,12 @@ class SignupScreen extends StatelessWidget {
                   prefixIcon: Icons.lock,
                   suffixIcon: Icons.remove_red_eye,
                   includeSuffixIcon: true,
-                  controller: AppProperties.signupUserPasswordController,
+                  controller: AppProperties.loginUserPasswordController,
                   secureText: true,
                   state: state,
                   hintText: AppStrings.signupScreenSixthText,
                   onPressed: () => context
-                      .read<SignupSecurePasswordCubit>()
-                      .setSuffixText(secureText: state ? false : true),
-                );
-              },
-            ),
-            SizedBox(
-              height: 15.sp,
-            ),
-            BlocBuilder<SignupSecurePasswordEnterCubit, bool>(
-              builder: (context, state) {
-                return CustomTextField(
-                  textInputAction: TextInputAction.next,
-                  textInputType: TextInputType.visiblePassword,
-                  maxLines: 1,
-                  prefixIcon: Icons.lock,
-                  suffixIcon: Icons.remove_red_eye,
-                  includeSuffixIcon: true,
-                  controller: AppProperties.signupUserReEnterPasswordController,
-                  secureText: true,
-                  state: state,
-                  hintText: AppStrings.signupScreenSeventhText,
-                  onPressed: () => context
-                      .read<SignupSecurePasswordEnterCubit>()
-                      .setSuffixText(secureText: state ? false : true),
-                );
-              },
-            ),
-            SizedBox(
-              height: 15.sp,
-            ),
-            BlocBuilder<SignupSecurePasswordCubit, bool>(
-              builder: (context, state) {
-                return CustomTextField(
-                  textInputAction: TextInputAction.done,
-                  textInputType: TextInputType.number,
-                  maxLines: 1,
-                  prefixIcon: Icons.code_sharp,
-                  suffixIcon: Icons.remove_red_eye,
-                  includeSuffixIcon: false,
-                  controller: AppProperties.signupUserReferController ,
-                  secureText: false,
-                  state: state,
-                  hintText: AppStrings.signupScreenEighthText,
-                  onPressed: () => context
-                      .read<SignupSecurePasswordCubit>()
+                      .read<LoginSecurePasswordCubit>()
                       .setSuffixText(secureText: state ? false : true),
                 );
               },
@@ -160,9 +95,13 @@ class SignupScreen extends StatelessWidget {
               height: 70.sp,
             ),
             AppButtons.customFilledButton(
-              onTopText: AppStrings.signupScreenFirstText,
+              onTopText: AppStrings.loginScreenFirstText,
               color: AppColors.themeRed,
-              onTap: () {},
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const DashboardPageViewScreen(),
+                ),
+              ),
             ),
             SizedBox(
               height: 25.sp,
@@ -175,7 +114,7 @@ class SignupScreen extends StatelessWidget {
                     fontSize: 14.sp,
                     fontWeight: FontWeight.normal,
                   ),
-                  text: AppStrings.signupScreenFirstRichText,
+                  text: AppStrings.loginScreenFourthText,
                   children: [
                     TextSpan(
                       recognizer: TapGestureRecognizer()
@@ -183,12 +122,12 @@ class SignupScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             CustomSlidePageRoute(
-                              child: const LoginScreen(),
-                              direction: AxisDirection.right,
+                              child: const SignupScreen(),
+                              direction: AxisDirection.left,
                             ),
                           );
                         },
-                      text: ' Log In',
+                      text: AppStrings.loginScreenFirstText,
                       style: GoogleFonts.poppins(
                         color: AppColors.themeRed,
                         fontSize: 14.sp,
