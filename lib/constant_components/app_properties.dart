@@ -30,4 +30,9 @@ class AppProperties {
   //job poster dashboard controller
   static PageController jobPosterDashboardSelectedPage =
   PageController(initialPage: 0);
+  static PageController jobPosterDashboardHomePageViewController =
+  PageController(initialPage: 0);
+  static TextEditingController jobPosterSearchTextFieldController =
+  TextEditingController();
+
 }

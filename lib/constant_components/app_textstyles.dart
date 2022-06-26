@@ -40,19 +40,37 @@ final authenticationHintTextStyle = GoogleFonts.poppins(
 
 final textFieldStyle = GoogleFonts.poppins(
   color: AppColors.introductionTitleTextColor,
-  fontSize: 20.sp,
+  fontSize: 14.sp,
 );
 
 final textFieldHintTextStyle = GoogleFonts.poppins(
-  fontSize: 15.sp,
+  fontSize: 14.sp,
   fontWeight: FontWeight.normal,
   color: AppColors.authenticationHintTextColor,
+);
+
+final searchHintTextTextStyle = GoogleFonts.poppins(
+  fontSize: 12.sp,
+  fontWeight: FontWeight.normal,
+  color: AppColors.dividerColor,
 );
 
 final loginOrTextStyle = GoogleFonts.poppins(
   fontSize: 15.sp,
   fontWeight: FontWeight.normal,
   color: Colors.grey.shade500,
+);
+
+final jobPosterHomeTabPageViewFirstTextTextStyle = GoogleFonts.poppins(
+  fontSize: 14.sp,
+  fontWeight: FontWeight.w500,
+  color: AppColors.black,
+);
+
+final jobPosterHomeTabPageViewSecondTextTextStyle = GoogleFonts.poppins(
+  fontSize: 14.sp,
+  fontWeight: FontWeight.w500,
+  color: AppColors.dividerColor,
 );
 
 final forgotPassSubtitleTextStyle = GoogleFonts.poppins(

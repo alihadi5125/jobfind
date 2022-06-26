@@ -18,6 +18,7 @@ dependencies:
   http: ^0.13.4
   google_fonts: ^2.3.2
   smooth_page_indicator: ^1.0.0+2
+  badges: ^2.0.3
 
 dev_dependencies:
   flutter_test:

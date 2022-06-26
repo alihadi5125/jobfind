@@ -47,6 +47,10 @@ class AppStrings {
   static const String jobPosterSecondText = 'Messages';
   static const String jobPosterThirdText = 'Notifications';
   static const String jobPosterFourthText = 'Settings';
+  static const String jobPosterFifthText = 'Start your jobs here';
+  static const String jobPosterSixthText = 'My Jobs';
+  static const String jobPosterSeventhText = 'Completed Jobs  ';
+  static const String jobPosterEighthText = 'Canceled Jobs  ';
 
 
 }

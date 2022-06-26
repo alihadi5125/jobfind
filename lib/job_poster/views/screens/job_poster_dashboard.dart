@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobfind/constant_components/app_colors.dart';
-import 'package:jobfind/constant_components/app_icons.dart';
 import 'package:jobfind/constant_components/app_properties.dart';
 import 'package:jobfind/job_poster/conrollers/cubits/job_poster_dashboard_pageview_cubit.dart';
 import 'package:jobfind/job_poster/views/custom_widgets/bottom_navigation_bar.dart';
 import 'package:jobfind/job_poster/views/custom_widgets/floating_action_button.dart';
+import 'package:jobfind/job_poster/views/screens/home/home_screen.dart';
 
 class JobPosterDashboard extends StatelessWidget {
   const JobPosterDashboard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    bool keyboardIsOpened = MediaQuery.of(context).viewInsets.bottom != 0.0;
     return SafeArea(
       child: BlocBuilder<JobPosterDashboardPageviewCubit, int>(
         builder: (context, state) {
@@ -20,7 +21,8 @@ class JobPosterDashboard extends StatelessWidget {
             extendBody: true,
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.centerDocked,
-            floatingActionButton: const CenterButton(),
+            floatingActionButton:  keyboardIsOpened ?
+            null :  const CenterButton(),
             bottomNavigationBar: const SponsorBottomNavigationBar(),
             body: Container(
               height: 1.sh,
@@ -37,14 +39,13 @@ class JobPosterDashboard extends StatelessWidget {
                         .setIndex(pageIndex: null);
                   },
                   children: [
+                    const JobPosterHomeScreen(),
                     Container(
                       height: 1.sh,
                       width: 1.sw,
                       color: Colors.white,
                       child: Center(
-                        child: Text(
-                          'Home Screen'
-                        ),
+                        child: Text('Messages Screen'),
                       ),
                     ),
                     Container(
@@ -52,9 +53,7 @@ class JobPosterDashboard extends StatelessWidget {
                       width: 1.sw,
                       color: Colors.white,
                       child: Center(
-                        child: Text(
-                            'Messages Screen'
-                        ),
+                        child: Text('Notifications Screen'),
                       ),
                     ),
                     Container(
@@ -62,9 +61,7 @@ class JobPosterDashboard extends StatelessWidget {
                       width: 1.sw,
                       color: Colors.white,
                       child: Center(
-                        child: Text(
-                            'Notifications Screen'
-                        ),
+                        child: Text('Settings Screen'),
                       ),
                     ),
                     Container(
@@ -72,19 +69,7 @@ class JobPosterDashboard extends StatelessWidget {
                       width: 1.sw,
                       color: Colors.white,
                       child: Center(
-                        child: Text(
-                            'Settings Screen'
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 1.sh,
-                      width: 1.sw,
-                      color: Colors.white,
-                      child: Center(
-                        child: Text(
-                            'New Job Post Screen'
-                        ),
+                        child: Text('New Job Post Screen'),
                       ),
                     ),
                   ],
