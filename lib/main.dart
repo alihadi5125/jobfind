@@ -8,6 +8,7 @@ import 'package:jobfind/authentication/controllers/cubits/signup_secure_password
 import 'package:jobfind/authentication/controllers/cubits/introduction_page_view_cubit.dart';
 import 'package:jobfind/authentication/views/screens/introduction_screen_pageview.dart';
 import 'package:jobfind/authentication/views/screens/splash_screen.dart';
+import 'package:jobfind/job_poster/conrollers/cubits/job_poster_dashboard_pageview_cubit.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,6 +39,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<LoginSecurePasswordCubit>(
           create: (BuildContext context) => LoginSecurePasswordCubit(false),
+        ),
+        BlocProvider<JobPosterDashboardPageviewCubit>(
+          create: (BuildContext context) => JobPosterDashboardPageviewCubit(0),
         ),
       ],
       child: ScreenUtilInit(

@@ -26,4 +26,8 @@ class AppProperties {
   //forgot password controllers
   static TextEditingController forgotPasswordEmailController =
       TextEditingController();
+
+  //job poster dashboard controller
+  static PageController jobPosterDashboardSelectedPage =
+  PageController(initialPage: 0);
 }

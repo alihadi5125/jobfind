@@ -79,3 +79,15 @@ final forgotPasswordTextStyle = GoogleFonts.poppins(
   color: AppColors.themeRed,
 );
 
+final jobPostBottomNavBarFirstTextStyle = GoogleFonts.poppins(
+  color: AppColors.themeRed,
+  fontSize: 15.sp,
+  fontWeight: FontWeight.w400,
+);
+
+final jobPostBottomNavBarSecondTextStyle = GoogleFonts.poppins(
+  color: AppColors.dividerColor,
+  fontSize: 15.sp,
+  fontWeight: FontWeight.w400,
+);
+

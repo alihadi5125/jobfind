@@ -71,14 +71,10 @@ class ForgotButtonPhoneNumberScreen extends StatelessWidget {
                   height: 50.sp,
                 ),
                 AppButtons.customFilledButton(
-                  onTopText: AppStrings.forgotPasswordScreenFifthText ,
+                  onTopText: AppStrings.forgotPasswordScreenSeventhText ,
                   color: AppColors.themeRed,
                   googleButton: false,
-                  onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const ForgotPasswordOtpScreen(),
-                    ),
-                  ),
+                  onTap: (){}
                 ),
               ],
             ),

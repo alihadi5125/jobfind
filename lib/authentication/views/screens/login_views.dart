@@ -15,6 +15,7 @@ import 'package:jobfind/constant_components/app_textstyles.dart';
 import 'package:jobfind/constant_components/custom_slide_page_transition.dart';
 import 'package:jobfind/constant_components/app_buttons.dart';
 import 'package:jobfind/constant_components/custom_textfield.dart';
+import 'package:jobfind/job_poster/views/screens/job_poster_dashboard.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -122,12 +123,11 @@ class LoginScreen extends StatelessWidget {
                 onTopText: AppStrings.loginScreenFirstText,
                 color: AppColors.themeRed,
                 googleButton: false,
-                onTap: (){},
-                // onTap: () => Navigator.of(context).push(
-                //   MaterialPageRoute(
-                //     builder: (context) => const DashboardPageViewScreen(),
-                //   ),
-                // ),
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const JobPosterDashboard(),
+                  ),
+                ),
               ),
               SizedBox(
                 height: 8.sp,

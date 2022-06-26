@@ -42,4 +42,11 @@ class AppStrings {
   static const String forgotPasswordScreenSeventhText = 'Confirm';
 
 
+  //Job Poster Dashboard texts
+  static const String jobPosterFirstText = 'Home';
+  static const String jobPosterSecondText = 'Messages';
+  static const String jobPosterThirdText = 'Notifications';
+  static const String jobPosterFourthText = 'Settings';
+
+
 }
